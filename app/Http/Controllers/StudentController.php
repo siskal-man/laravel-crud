@@ -86,7 +86,7 @@ class StudentController extends Controller
     {
         $student = Student::findOrFail($id);
 
-        $request->validate([
+        $this->validate($request, [
             'first_name' => 'required',
             'last_name' => 'required',
             'age' => 'required|numeric',

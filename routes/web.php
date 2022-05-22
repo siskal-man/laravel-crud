@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource("students", StudentController::class, [
-    'only' => [
-        'index',
-        'create',
-        'store',
-        'show',
-        'edit',
-        'update',
-        'destroy'
-    ]
-]);
+// Route::resource("students", StudentController::class, [
+//     'only' => [
+//         'index',
+//         'create',
+//         'store',
+//         'show',
+//         'edit',
+//         'update',
+//         'destroy'
+//     ]
+// ]);
+
+Route::resource('students', 'App\Http\Controllers\StudentController');
